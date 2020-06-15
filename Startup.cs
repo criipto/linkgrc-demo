@@ -37,6 +37,9 @@ namespace LinkGRC
                 }
             );
 
+            string discoveryEndpoint = string.Format("{0}/.well-known/openid-configuration", authority);
+            var configManager = new ConfigurationManager<OpenIdConnectConfiguration>(discoveryEndpoint, new OpenIdConnectConfigurationRetriever(), sharedClient);
+
             app.UseOpenIdConnectAuthentication(
                 new OpenIdConnectAuthenticationOptions
                 {
@@ -59,12 +62,11 @@ namespace LinkGRC
                             SetupWithDefaults(context.AuthenticationTicket.Identity);
                             return Task.CompletedTask;
                         }
-                    }
+                    },
+                    ConfigurationManager = configManager
                 }
             );
 
-            string discoveryEndpoint = string.Format("{0}/.well-known/openid-configuration", authority);
-            var configManager = new ConfigurationManager<OpenIdConnectConfiguration>(discoveryEndpoint, new OpenIdConnectConfigurationRetriever(), sharedClient);
             app.UseJwtBearerAuthentication(
                 new JwtBearerAuthenticationOptions
                 {
