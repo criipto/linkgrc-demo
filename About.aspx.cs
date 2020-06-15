@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Microsoft.Owin.Security;
+using Microsoft.Owin.Security.OpenIdConnect;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,7 +13,12 @@ namespace LinkGRC
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!Request.IsAuthenticated)
+            {
+                HttpContext.Current.GetOwinContext().Authentication.Challenge(
+                  new AuthenticationProperties { RedirectUri = "/About.aspx" },
+                  OpenIdConnectAuthenticationDefaults.AuthenticationType);
+            }
         }
     }
 }
