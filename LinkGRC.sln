@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30114.105
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1209
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinkGRC", "LinkGRC.csproj", "{29F12C8B-5491-4660-B3B6-8CE661043EDD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests", "UnitTests\UnitTests.csproj", "{67739ADA-3D37-4D74-961A-054899F10257}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{29F12C8B-5491-4660-B3B6-8CE661043EDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{29F12C8B-5491-4660-B3B6-8CE661043EDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{29F12C8B-5491-4660-B3B6-8CE661043EDD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{67739ADA-3D37-4D74-961A-054899F10257}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67739ADA-3D37-4D74-961A-054899F10257}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67739ADA-3D37-4D74-961A-054899F10257}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67739ADA-3D37-4D74-961A-054899F10257}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
